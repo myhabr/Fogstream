@@ -11,7 +11,7 @@ def convertComplex(x,y):
   _phi = 0
   m = [0,0]
 
-  if (z != 0):
+  if(z != 0):
 
     _phi = math.asin(math.fabs(y)/z)
     m = [0,1]
@@ -24,7 +24,7 @@ def convertComplex(x,y):
 
   phi = m[0]*math.pi + m[1]*_phi
   
-  print ("({}, {})".format(z, phi))
+  print("({}, {})".format(z, phi))
   
 convertComplex(X,Y)
 
