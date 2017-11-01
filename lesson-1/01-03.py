@@ -1,9 +1,9 @@
 import math
 
+
 def minToTime(n):
   
   n = int(math.fabs(n))
-
   h = 0; m = 0
   
   if (n > 0):
@@ -13,7 +13,6 @@ def minToTime(n):
     if (diff > 0): n = n % (60*24)
     
     m = n % 60
-
     diff = n - m
     
     if (diff > 0): h = int(diff / 60)
