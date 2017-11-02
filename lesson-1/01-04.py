@@ -1,28 +1,23 @@
-import math
-
-
-def getPoint(v,t):
+def getPoint():
+  
+  v,t = map(int, input("введите скорость (км/ч) и время движения (ч) через пробел:").split())
   
   roadLength = 109
-  reverse = False
+  reverse = 0
 
-  if (v<0): reverse = True
+  if (v<0):
+    reverse = 1
+    v = -v
 
-  v = math.fabs(v)
   fullPath = v*t
   path = fullPath % roadLength
   diff = fullPath - path
 
-  if (diff > 0):
+  if (diff): fullPath = path
+  if (reverse): fullPath = roadLength - fullPath
 
-    fullPath = path
-    
-  if (reverse):
-    
-    fullPath = roadLength - fullPath
-    
   fullPath = round(fullPath)
   
-  print(fullPath)
+  print("остановка на отметке {}км".format(fullPath))
 
-getPoint(-62,4.3)
+getPoint()
