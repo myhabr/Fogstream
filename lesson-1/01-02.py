@@ -1,18 +1,13 @@
-import math
-
-
-def countTables(a,b,c):
-
-  def prepareData(x):
-    return int(math.fabs(x))
-    
+def countTables():
+  
   def itemTables(x):
-    return math.ceil(x/2)
-    
-  students = list(map(prepareData, [a,b,c]))
-    
-  tables = sum(list(map(itemTables, students)))
+    if (x%2): x+=1
+    return x/2
+  
+  students = map(int, input("введите кол-во учеников 3-х классов через пробел:").split())
+  tables = int(sum(list(map(itemTables, students))))
 
-  print (tables)
+  print ("требуется столов: {}".format(tables))
 
-countTables(2.3,3,-4)
+
+countTables()
