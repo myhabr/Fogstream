@@ -1,11 +1,11 @@
 def getPoint():
   
-  v,t = map(int, input("введите скорость (км/ч) и время движения (ч) через пробел:").split())
-  
   roadLength = 109
   reverse = 0
-
-  if (v<0):
+  
+  v,t = map(float, input("введите скорость (км/ч) и время движения (ч) через пробел:").split())
+  
+  if v<0:
     reverse = 1
     v = -v
 
@@ -13,8 +13,8 @@ def getPoint():
   path = fullPath % roadLength
   diff = fullPath - path
 
-  if (diff): fullPath = path
-  if (reverse): fullPath = roadLength - fullPath
+  if diff: fullPath = path
+  if reverse: fullPath = roadLength - fullPath
 
   fullPath = round(fullPath)
   
