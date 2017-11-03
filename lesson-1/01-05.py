@@ -18,9 +18,8 @@ def calcTime():
   nBrOdd = nBr - nBrEv
   fullDur = n*lesDur + nBrEv*brEv + nBrOdd*brOdd
   
-  print("уроков: {}; перемен: {}(5), {}(15)".format(n, int(nBrOdd), int(nBrEv)))
-  
-  convertTime(fullDur, bgn)
+  # print("уроков: {}; перемен: {}(5), {}(15)".format(n, int(nBrOdd), int(nBrEv)))
+  print("уроки заканчиваются в {}".format(convertTime(fullDur, bgn)))
   
 def convertTime(n, start):
 
@@ -32,6 +31,6 @@ def convertTime(n, start):
   if (h<10): h = "0" + str(h)
   if (m<10): m = "0" + str(m)
 
-  print ("уроки закончились в {}:{}".format(h,m))
+  return ("{}:{}".format(h,m))
 
 calcTime()
