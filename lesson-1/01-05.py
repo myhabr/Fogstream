@@ -1,8 +1,7 @@
 def convertTime(n, bgn):
   n += bgn[0]*60 + bgn[1]
   m = int(n % 60)
-  diff = n - m
-  if diff: h = int(diff / 60)
+  h = int(n // 60)
   if h<10: h = "0" + str(h)
   if m<10: m = "0" + str(m)
   return ("{}:{}".format(h,m))
@@ -18,8 +17,7 @@ def calcTime(n):
   if nBr>1: nBrEv = nBr//2
   nBrOdd = nBr - nBrEv
   fullDur = n*lesDur + nBrEv*brEv + nBrOdd*brOdd
-  print("\n> уроков: {}; перемен: {}({}), {}({})".format(n, int(nBrOdd), brOdd, int(nBrEv), brEv))
-  print("\n> заканчиваются в {}\n".format(convertTime(fullDur, bgn)))
+  print("\n> уроков: {}; перемен: {}({}), {}({})\n> заканчиваются в {}\n".format(n, int(nBrOdd), brOdd, int(nBrEv), brEv, convertTime(fullDur, bgn)))
 
 while 1:
   string = input("введите кол-во уроков или -s:")
