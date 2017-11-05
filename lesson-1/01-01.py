@@ -4,7 +4,7 @@ import cmath
 
 def convertComplex(n):
   x, y = map(float, n.split())
-  z = math.sqrt(x*x + y*y) # math.hypot(x, y)
+  z = (x*x + y*y)**.5 # math.hypot(x, y)
   _phi = 0
   m = [0,0]
   if z:
@@ -18,10 +18,9 @@ def convertComplex(n):
   phi = m[0]*math.pi + m[1]*_phi
   print("\n({}, {})".format(z, phi))
   print(cmath.polar(complex(x,y)))
-  print()
 
 while 1:
-  string = input("введите X Y через пробел или -s:")
+  string = input("\nвведите X Y через пробел или -s:")
   if string.lower() == '-s':
     print("\n> --- программа остановлена ---\n")
     break
