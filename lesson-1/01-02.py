@@ -1,9 +1,6 @@
 def countTables(n):
-  def itemTables(x):
-    if x%2: x+=1
-    return x/2
   students = map(int, n.split())
-  tables = int(sum(list(map(itemTables, students))))
+  tables = int(sum(list(map(lambda x : x//2+x%2, students))))
   print ("\n> требуется столов: {}\n".format(tables))
 
 while 1:
