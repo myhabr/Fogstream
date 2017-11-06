@@ -1,8 +1,8 @@
 def minToClock(n):
-  n = n % (60*24)
+  n = n%(60*24)
   h = "{0:0>2}".format(n//60)
   m = "{0:0>2}".format(n%60)
-  print ("\n> {}:{}\n".format(h,m))
+  print("\n> {}:{}\n".format(h,m))
 
 while 1:
   string = input("введите число минут или -s: ")
